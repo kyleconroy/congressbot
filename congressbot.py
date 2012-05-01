@@ -12,6 +12,7 @@ house_collection = congress_db.wc_house_today
 
 template = Template(open('post_template.md').read())
 
+
 def parse():
     govfeed = feedparser.parse('http://www.govtrack.us/events/events.rss?'
                                'feeds=misc%3Aintroducedbills')
