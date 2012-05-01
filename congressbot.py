@@ -29,6 +29,14 @@ def parse():
             logging.info("Already created story: {}".format(entry['title']))
             continue
 
+        if 'duty' in entry['title'] and 'temporar' in entry['title']:
+            logging.info("Ignored boring bill: {}".format(entry['title']))
+            continue
+
+        if '.Res' in entry['title']:
+            logging.info("Ignored resolution: {}".format(entry['title']))
+            continue
+
         record = {
             'title': entry['title'],
             'description': entry['description'],
