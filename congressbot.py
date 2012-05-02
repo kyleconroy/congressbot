@@ -25,6 +25,10 @@ def parse():
             logging.info("Couldn't find GUID")
             continue
 
+        if not entry['title']:
+            logging.info("No title for bill: {}".format(entry['guid']))
+            continue
+
         if house_collection.find_one({'guid': entry['guid']}):
             logging.info("Already created story: {}".format(entry['title']))
             continue

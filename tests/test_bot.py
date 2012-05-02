@@ -8,3 +8,4 @@ import congressbot
 def test_feed_parse(reddit_mock, house_mock):
     house_mock.find_one.return_value = False
     congressbot.parse()
+    assert False
